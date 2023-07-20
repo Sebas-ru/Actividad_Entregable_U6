@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0E85B6;
+    font-family: 'Raleway', sans-serif;
+}
+/*GENERAL*/
+h1 {
+    font-size: 80px;
+    color: beige;
+    padding: 0.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+/*PAGINA DE INICIO*/
+.inicio {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*ENLACES*/
+.contenido-enlaces {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.enlace {
+    background-color: rgb(86, 136, 228);
+    padding: 1rem;
+    border-radius: 40px;
+    transition: .6s;
+    cursor: pointer;
+}
+
+.enlace a{
+    text-decoration: none;
+    color: beige;
+    font-size: 1.7rem;
+    transition: .5s;
+}
+
+/*Formulario Especialistas*/
+.formulario {
+    background-color: #04359ed5;
+    width: 40rem;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 3rem;
+}
+
+.titulo-formulario {
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    color: beige;
+    font-weight: 400;
+}
+
+.formulario legend {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contenedor {
+   text-align: center;
+}
+
+.campos {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;    
+    align-items: center;
+}
+
+.campos select {
+    width: 25.3rem;
+    height: 1.8rem;
+}
+
+.campos label {
+    font-size: 1.2rem;
+    color: rgb(255, 238, 0);
+}
+
+.campos input {
+    width: 25rem;
+    height: 1.8rem;
+    outline: none;
+}
+.campos:focus {
+    border: none;
+}
+
+.boton {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 20rem;
+    height: 40px;
+    border-radius: 35rem;
+    font-size: 1.5rem;
+    /*background-color: #F4AF1B;*/
+    background-color: transparent;
+    color: beige;
+    border: 3px solid beige;
+    transition: .4s;
+}
+.boton:hover{
+    border: 3px solid rgb(255, 238, 0);
+    color: rgb(255, 238, 0);
+}
+
+/*Tabla información*/
+.tabla-informacion {
+    background-color: #04359ed5;
+    width: 95%;
+    margin: 2.5rem auto;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: rgb(255, 238, 0);
+    letter-spacing: 1px;
+    border-radius: 2rem;
+}
+
+.tabla-informacion th  {
+    padding: 1rem 0.5rem;
+}
+
+td {
+    text-align: center;
+    color: beige;
+    padding: 0.5rem 0;
+}

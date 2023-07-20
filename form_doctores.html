@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krub:wght@700&family=Raleway:ital,wght@0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>Formulario Doctores</title>
+  </head>
+  <body>
+    <h1>Health Colombia</h1>
+
+    <section>
+      <form class="formulario" id="formulario">
+        <legend class="titulo-formulario">
+          Formulario de doctores especialistas
+        </legend>
+
+        <div class="contenedor">
+          <div class="campos">
+            <label for="NombreEspecialista">Nombre del especialista</label>
+            <input type="text" id="nombreEspecialista" />
+          </div>
+
+          <div class="campos">
+            <label for="ApellidoEspecialista">Apellido del especialista</label>
+            <input type="text" id="apellidoEspecialista" />
+          </div>
+
+          <div class="campos">
+            <label for="numeroCedula">Número de cédula</label>
+            <input type="number" id="numeroCedula" />
+          </div>
+
+          <div class="campos">
+            <label>Lista de especialidades</label>
+            <select name="especialidades" id="opcionesEspecialidad">
+              <option value="Medicina General">Medicina General</option>
+              <option value="Cardiologia">Cardiología</option>
+              <option value="Medicina Integral">Medicina Interna</option>
+              <option value="Dermatologia">Dermatología</option>
+              <option value="Rehabilitación Fisica">Rehabilitación física</option>
+              <option value="Psicologia">Psicología</option>
+              <option value="Odontologia">Odontología</option>
+              <option value="Radiologia">Radiología</option>
+            </select>
+          </div>
+
+          <div class="campos">
+            <label for="numeroConsultorio">Consultorio</label>
+            <input type="number" id="numeroConsultorio" />
+          </div>
+
+          <div class="campos">
+            <label for="email">Correo de contacto</label>
+            <input type="email" id="emailEspecialista" />
+          </div>
+          <div></div>
+
+          <button type="button" class="boton" onclick="capturarDatosDoctores()">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <table class="tabla-informacion" id="tablaInfoDoc">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Número de cédula</th>
+            <th>Especialidad</th>
+            <th>Consultorio</th>
+            <th>Correo de contacto</th>
+          </tr>
+        </thead>
+        <tbody></tbody> 
+      </table>
+    </section>
+
+    <div id="descarga"></div>
+
+
+    <script src="capturarDatos.js"></script>
+    <script src="guardarDatos.js"></script>
+  </body>
+</html>
