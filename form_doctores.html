@@ -13,7 +13,6 @@
   <body>
 
     <h1>Health Colombia</h1>
-    <h3>Hola GIT</h3>
     
     <section>
       <form class="formulario" id="formulario">
@@ -34,7 +33,7 @@
 
           <div class="campos">
             <label for="numeroCedula">Número de cédula</label>
-            <input type="number" id="numeroCedula" />
+            <input type="number" id="numeroCedula" min="1">
           </div>
 
           <div class="campos">
@@ -53,12 +52,12 @@
 
           <div class="campos">
             <label for="numeroConsultorio">Consultorio</label>
-            <input type="number" id="numeroConsultorio" />
+            <input type="number" id="numeroConsultorio" min="1">
           </div>
 
           <div class="campos">
             <label for="email">Correo de contacto</label>
-            <input type="email" id="emailEspecialista" />
+            <input type="email" id="emailEspecialista">
           </div>
           <div></div>
 
@@ -86,9 +85,6 @@
     </section>
 
     <div id="descarga"></div>
-
-    
-
 
     <script src="capturarDatos.js"></script>
     <script src="guardarDatos.js"></script>

@@ -7,14 +7,14 @@
       href="https://fonts.googleapis.com/css2?family=Krub:wght@700&family=Raleway:ital,wght@0,500;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/estilos.css"/>
     <title>Formulario Personas</title>
   </head>
   <body>
     <h1>Health Colombia</h1>
 
     <section>
-      <form class="formulario">
+      <form class="formulario" id="formulario">
         <legend class="titulo-formulario">Formulario de personas</legend>
 
         <div class="contenedor">
@@ -30,30 +30,30 @@
 
           <div class="campos">
             <label for="numeroCedulaPaciente">Número de cédula</label>
-            <input type="number" id="numeroCedulaPersonas">
+            <input type="number" id="numeroCedulaPersonas" min="1">
           </div>
 
           <div class="campos">
             <label for="edadPaciente">Edad</label>
-            <input type="number" id="edadPersonas">
+            <input type="number" id="edadPersonas" min="1">
           </div>
 
           <div class="campos">
             <label for="telefono">Teléfono</label>
-            <input type="number" id="telefonoPersonas">
+            <input type="number" id="telefonoPersonas" min="1">
           </div>
 
           <div class="campos">
             <label>Especialidad requerida</label>
             <select name="especialidades" id="especialidadRequerida">
-              <option value="MedGen">Medicina General</option>
-              <option value="cardio">Cardiología</option>
-              <option value="MedInt">Medicina Interna</option>
-              <option value="derma">Dermatología</option>
-              <option value="RehaFisi">Rehabilitación física</option>
-              <option value="psico">Psicología</option>
-              <option value="odon">Odontología</option>
-              <option value="radio">Radiología</option>
+              <option value="Medicina General">Medicina General</option>
+              <option value="Cardiología">Cardiología</option>
+              <option value="Medicina Interna">Medicina Interna</option>
+              <option value="Dermatología">Dermatología</option>
+              <option value="Rehabilitación Física">Rehabilitación física</option>
+              <option value="Psicología">Psicología</option>
+              <option value="Odontología">Odontología</option>
+              <option value="Radiología">Radiología</option>
             </select>
           </div>
 
@@ -61,6 +61,24 @@
         </div>
       </form>
     </section>
+
+    <section>
+      <table class="tabla-informacion" id="tablaInfoPersonas">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Número de cédula</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Especialidad Requerida</th>
+          </tr>
+        </thead>
+        <tbody></tbody> 
+      </table>
+    </section>
+
+    <div id="descarga"></div>
 
     <script src="capturarDatos.js"></script>
     <script src="guardarDatos.js"></script>

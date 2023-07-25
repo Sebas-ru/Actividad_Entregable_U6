@@ -26,11 +26,8 @@ function guardarDatos(nombreEspecialista, apellidoEspecialista, numeroCedula, op
     enlaceDescarga.href = url
     enlaceDescarga.download = "especialistas.json"
     enlaceDescarga.textContent = "Descargar archivo JSON de doctores especialistas"
-    descarga.appendChild(enlaceDescarga)
+    //descarga.appendChild(enlaceDescarga)
     
-    
-    console.log("Este es el JSON", jsonDatosDoctores);
-
     infoDoctoresTabla();
 }
 
@@ -51,7 +48,7 @@ function infoDoctoresTabla(){ //Esta función permite mostrar la información qu
         const numeroConsulTabla = document.createElement("td")
         const emailTabla = document.createElement("td")
 
-        //Relacionar los campos a cada registro del objeto que contiene la información
+        //Relacionar los campos con cada registro del objeto que contiene la información
         nombreDocTabla.textContent = infoDoctores.nombreDoc
         apellidoDocTabla.textContent = infoDoctores.apellidoDoc
         numCedulaDocTabla.textContent = infoDoctores.numCedDoc
@@ -66,7 +63,6 @@ function infoDoctoresTabla(){ //Esta función permite mostrar la información qu
         filaInfoDoc.appendChild(especialidadSelec)
         filaInfoDoc.appendChild(numeroConsulTabla)
         filaInfoDoc.appendChild(emailTabla)
-
     })
 }
 
@@ -84,22 +80,6 @@ fetch(file)
 .catch(error => console.log(error))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //PERSONAS
 var datosIngresadosPersonas = [];
 
@@ -113,12 +93,61 @@ function guardarDatosPersonas(nombrePersona, apellidoPersona, numCedulaPersona, 
         telefonoPersona : telefonoPersona,
         especialidadRequerida : especialidadRequerida
     }
-    console.log(infoPersonas)
+    //console.log(infoPersonas)
 
     datosIngresadosPersonas.push(infoPersonas);
 
-    let jsonDatosPersonas = JSON.stringify(infoPersonas)
-    console.log(jsonDatosPersonas)
+    const jsonDatosPersonas = JSON.stringify(infoPersonas)
+    //console.log(jsonDatosPersonas)
+
+    //Crear ub blob 
+    const blob = new Blob([jsonDatosPersonas], {type:"application/json"})
+    //Crear una URL para el objeto blob
+    const url = URL.createObjectURL(blob)
+    //Crear enlace de descarga 
+    const descarga = document.getElementById("descarga")
+    const enlaceDescarga = document.createElement("a")
+    enlaceDescarga.href = url
+    enlaceDescarga.download = "Personas.json"
+    enlaceDescarga.textContent = "Descargar archivo JSON de personas registradas"
+    //descarga.appendChild(enlaceDescarga)
+
+    infoPersonasTabla();
+}
+
+function infoPersonasTabla(){
+    const tablaInfoPersonas = document.getElementById("tablaInfoPersonas")
+    const cuerpoTabla = tablaInfoPersonas.querySelector("tbody")
+    tablaInfoPersonas.innerHTML = "<thead><tr><th>Nombre</th><th>Apellido</th><th>Número de cédula</th><th>Edad</th><th>Teléfono</th><th>Especialidad Requerida</th></tr></thead>"
+
+    datosIngresadosPersonas.forEach((infoPersonas) => {
+        //Crea la fila de cada usuario que se vaya registrando
+        const filaInfoPersonas = tablaInfoPersonas.insertRow(-1)
+
+        //Crear los campos en su respectiva columna
+        const nombrePersonaTabla = document.createElement("td")
+        const apellidoPersonaTabla = document.createElement("td")
+        const numCedPersonaTabla = document.createElement("td")
+        const edadPersonaTabla = document.createElement("td")
+        const telefonoPersonaTabla = document.createElement("td")
+        const especialidadPersonaTabla = document.createElement("td")
+
+        //Relacionar los campos con cada registro del objeto que contiene la información
+        nombrePersonaTabla.textContent = infoPersonas.nombrePer
+        apellidoPersonaTabla.textContent = infoPersonas.apellidoPer
+        numCedPersonaTabla.textContent = infoPersonas.numeroCedulaPersona
+        edadPersonaTabla.textContent = infoPersonas.edadPersona
+        telefonoPersonaTabla.textContent = infoPersonas.telefonoPersona
+        especialidadPersonaTabla.textContent = infoPersonas.especialidadRequerida
+        
+        //Agregar los campos a la fila
+        filaInfoPersonas.appendChild(nombrePersonaTabla)
+        filaInfoPersonas.appendChild(apellidoPersonaTabla)
+        filaInfoPersonas.appendChild(numCedPersonaTabla)
+        filaInfoPersonas.appendChild(edadPersonaTabla)
+        filaInfoPersonas.appendChild(telefonoPersonaTabla)
+        filaInfoPersonas.appendChild(especialidadPersonaTabla)
+    })
 }
 
 
