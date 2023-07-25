@@ -1,7 +1,6 @@
 /* 
 const fs = require('fs');
 
-
 let datos1 = {
     codigo: "Amarillo",
     valor: "desconocido",
